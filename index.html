@@ -851,6 +851,20 @@
       // var data = {"lastName":lastName,"phone": phone, "email":email, "id":id}
       var data = {"email":email, "id":id}
       console.log(data)
+      fetch('https://script.google.com/macros/s/AKfycbx6TIaOodwIakjCiob70ym647xS3JdjE2LJOjtz-2o/dev', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.result);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
       google.script.run.onFormSubmit(data);
       document.body.innerHTML = '<p style="text-align: center;display: flex;align-items: center;justify-content: center;height: 100vh;     font-size: 4rem;">Check your email.</p>';
     }

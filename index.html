@@ -848,7 +848,8 @@
       var lastName = document.getElementById('lastName')?.value;
       var phone = document.getElementById('phone')?.value;
       var email = document.getElementById('email').value;
-      var data = {"lastName":lastName,"phone": phone, "email":email, "id":id}
+      // var data = {"lastName":lastName,"phone": phone, "email":email, "id":id}
+      var data = {"email":email, "id":id}
       console.log(data)
       google.script.run.onFormSubmit(data);
       document.body.innerHTML = '<p style="text-align: center;display: flex;align-items: center;justify-content: center;height: 100vh;     font-size: 4rem;">Check your email.</p>';
